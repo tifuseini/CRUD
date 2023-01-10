@@ -2,11 +2,12 @@ package com.example.jpaExample.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.hateoas.RepresentationModel;
 
 @Data
 @Entity
 @Table(name = "tbl_phone")
-public class Phone {
+public class Phone extends RepresentationModel<Phone> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

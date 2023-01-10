@@ -12,7 +12,27 @@ import java.util.List;
 public class PhoneService {
 
     private final PhoneRepository phoneRepository;
-    public List<Phone> getAllPhones() {
+    public List<Phone> findAllPhones() {
         return phoneRepository.findAll();
+    }
+
+    public Phone findPhoneById(Long id) {
+
+        return phoneRepository.findById(id).orElse(null);
+    }
+
+    public Phone createPhone(Phone phone) {
+        return phoneRepository.save(phone);
+    }
+
+    public Phone updatePhone(Phone phone, Long id) {
+        Phone phone1 = phoneRepository.findById(id).orElse(null);
+        phone1.setPhoneName(phone.getPhoneName());
+        phone1.setOs(phone.getOs());
+        return phoneRepository.save(phone1);
+    }
+
+    public void deletePhone(Long id) {
+        phoneRepository.deleteById(id);
     }
 }
