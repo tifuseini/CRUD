@@ -2,6 +2,7 @@ package com.example.jpaExample.serviceImpl;
 
 import com.example.jpaExample.model.Course;
 import com.example.jpaExample.repository.CourseRepository;
+import com.example.jpaExample.service.CourseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +10,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class CourseServiceImpl {
+public class CourseServiceImpl implements CourseService {
 
     private final CourseRepository courseRepository;
 
@@ -39,13 +40,14 @@ public class CourseServiceImpl {
         });
     }
 
-    public void deleteCourses(){
+    public void deleteAllCourses(){
         courseRepository.deleteAll();
     }
 
     public void deleteCourseById(Long id) {
         courseRepository.deleteById(id);
     }
+
 
 
 }
