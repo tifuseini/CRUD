@@ -1,5 +1,6 @@
 package com.example.jpaExample.serviceImpl;
 
+import com.example.jpaExample.exception.CourseNotFoundException;
 import com.example.jpaExample.model.Course;
 import com.example.jpaExample.repository.CourseRepository;
 import com.example.jpaExample.service.CourseService;
@@ -37,7 +38,8 @@ public class CourseServiceImpl implements CourseService {
             dbcourse.setRating(course.getRating());
             dbcourse.setDescription(course.getDescription());
             return courseRepository.save(dbcourse);
-        });
+        }).orElseThrow(() ->
+                new CourseNotFoundException(String.format("Course with id %d not avaliable", id)));
     }
 
     public void deleteAllCourses(){
