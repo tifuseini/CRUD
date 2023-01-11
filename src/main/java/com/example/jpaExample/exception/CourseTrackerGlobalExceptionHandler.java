@@ -1,2 +1,4 @@
-package com.example.jpaExample.exception;public class CourseTrackerGlobalExceptionHandler {
+package com.example.jpaExample.exception;
+
+public class CourseTrackerGlobalExceptionHandler {
 }
