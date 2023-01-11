@@ -1,5 +1,9 @@
 package com.example.jpaExample;
 
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.info.License;
+import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -17,13 +21,24 @@ public class JpaExampleApplication {
 		SpringApplication.run(JpaExampleApplication.class, args);
 	}
 
-	/** Command line Runner Impln ementation **/
+	/** Command line Runner Implementation **/
 	@Bean
 	public CommandLineRunner commandLineRunner() {
 		return args -> {
 			log.info("Hello World");
 		};
 
+	}
+
+	/** Custom OpenAPI Implementation **/
+	@Bean
+	public OpenAPI customOpenAPI() {
+		return new OpenAPI().info(new Info()
+				.title("JPA Example API")
+				.version("v1")
+				.description("JPA Example API")
+				.termsOfService("http://swagger.io/terms/")
+				.license(new License().name("Apache 2.0").url("http://springdoc.org")));
 	}
 
 

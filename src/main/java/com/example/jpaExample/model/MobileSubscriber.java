@@ -1,18 +1,14 @@
 package com.example.jpaExample.model;
 
-import jakarta.persistence.*;
-import lombok.Builder;
 import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import javax.persistence.*;
 import java.time.ZonedDateTime;
-import java.util.Date;
 @Data
 @Entity
 @Table(name = "tbl_mobile_subscriber")
-@Builder
 public class MobileSubscriber {
 
     @Id

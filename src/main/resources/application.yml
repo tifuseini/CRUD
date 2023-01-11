@@ -11,3 +11,8 @@ spring:
   jpa:
     generate-ddl: true
 
+
+  application:
+    name: test
+    description: test
+

@@ -1,8 +1,10 @@
 package com.example.jpaExample.model;
 
-import jakarta.persistence.*;
+
 import lombok.Data;
 import org.springframework.hateoas.RepresentationModel;
+
+import javax.persistence.*;
 
 @Data
 @Entity
