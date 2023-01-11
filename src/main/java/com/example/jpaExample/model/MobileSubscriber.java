@@ -1,14 +1,18 @@
 package com.example.jpaExample.model;
 
 import jakarta.persistence.*;
+import lombok.Builder;
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import java.time.ZonedDateTime;
 import java.util.Date;
-
+@Data
 @Entity
 @Table(name = "tbl_mobile_subscriber")
+@Builder
 public class MobileSubscriber {
 
     @Id
@@ -28,12 +32,15 @@ public class MobileSubscriber {
     @Column(name = "service_type",nullable = false)
     private String serviceType;
 
-    @Column(name = "service_start_date",nullable = false)
+    @Column(name = "service_start_date")
     @CreationTimestamp
-    private Date serviceStartDate;
+    private ZonedDateTime serviceStartDate;
 
     @Column(name = "service_update_date")
     @UpdateTimestamp
-    private Date serviceUpdateDate;
+    private ZonedDateTime serviceUpdateDate;
 
+    public MobileSubscriber() {
+
+    }
 }

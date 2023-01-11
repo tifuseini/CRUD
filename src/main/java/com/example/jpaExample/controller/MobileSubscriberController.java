@@ -16,26 +16,27 @@ public class MobileSubscriberController {
 
     @GetMapping("/")
     public List<MobileSubscriber> getAllMobileSubscribers() {
-        return null;
+        return mobileSubscriberService.findAllMobileSubscribers();
     }
 
     @GetMapping("/{id}")
     public MobileSubscriber getMobileSubscriberById(@PathVariable Long id) {
-        return null;
+        return mobileSubscriberService.findMobileSubscriberById(id);
     }
 
     @PostMapping("/")
     public MobileSubscriber createMobileSubscriber(@RequestBody MobileSubscriber mobileSubscriber) {
-        return null;
+        return mobileSubscriberService.createMobileSubscriber(mobileSubscriber);
     }
 
     @PutMapping("/update/{id}")
     public MobileSubscriber updateMobileSubscriber(@RequestBody MobileSubscriber mobileSubscriber, @PathVariable Long id) {
-        return null;
+        return mobileSubscriberService.updateMobileSubscriber(mobileSubscriber,id);
     }
 
     @DeleteMapping("/delete/{id}")
     public void deleteMobileSubscriber(@PathVariable Long id) {
+        mobileSubscriberService.deleteMobileSubscriber(id);
 
     }
 
