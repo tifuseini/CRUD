@@ -40,7 +40,4 @@ public class MobileSubscriber {
     @UpdateTimestamp
     private ZonedDateTime serviceUpdateDate;
 
-    public MobileSubscriber() {
-
-    }
 }
