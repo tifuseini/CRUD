@@ -51,7 +51,7 @@ public class CourseServiceImpl implements CourseService {
             courseRepository.delete(dbcourse);
             return dbcourse;
         }).orElseThrow(() ->
-                new CourseNotFoundException(String.format("Course with id %d not available", id)));
+                new CourseNotFoundException(String.format("{Course with id %d not available}", id)));
     }
 
 
