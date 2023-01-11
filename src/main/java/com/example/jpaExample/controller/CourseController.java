@@ -1,2 +1,4 @@
-package com.example.jpaExample;public class CourseController {
+package com.example.jpaExample.controller;
+
+public class CourseController {
 }
