@@ -39,7 +39,7 @@ public class CourseServiceImpl implements CourseService {
             dbcourse.setDescription(course.getDescription());
             return courseRepository.save(dbcourse);
         }).orElseThrow(() ->
-                new CourseNotFoundException(String.format("Course with id %d not avaliable", id)));
+                new CourseNotFoundException(String.format("Course with id %d not available", id)));
     }
 
     public void deleteAllCourses(){
@@ -47,7 +47,11 @@ public class CourseServiceImpl implements CourseService {
     }
 
     public void deleteCourseById(Long id) {
-        courseRepository.deleteById(id);
+        courseRepository.findById(id).map(dbcourse -> {
+            courseRepository.delete(dbcourse);
+            return dbcourse;
+        }).orElseThrow(() ->
+                new CourseNotFoundException(String.format("Course with id %d not available", id)));
     }
 
 
