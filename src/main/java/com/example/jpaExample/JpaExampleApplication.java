@@ -17,7 +17,7 @@ public class JpaExampleApplication {
 		SpringApplication.run(JpaExampleApplication.class, args);
 	}
 
-	/** Command line Runner Implementation **/
+	/** Command line Runner Impln ementation **/
 	@Bean
 	public CommandLineRunner commandLineRunner() {
 		return args -> {
