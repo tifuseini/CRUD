@@ -34,9 +34,5 @@ public class Student {
     @Column(name = "email_address",nullable = false,unique = true)
     private String emailId;
 
-    private String guardianName;
 
-    private String guardianEmail;
-
-    private String guardianMobile;
 }
